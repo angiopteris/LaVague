@@ -180,7 +180,7 @@ class BaseDriver(ABC):
         screenshots_path = Path("./screenshots")
         screenshots_path.mkdir(exist_ok=True)
 
-        current_url = url.replace("://", "_").replace("/", "_")
+        current_url = url.replace("://", "_").replace("/", "_").replace(":","_").replace("?", "_").replace(">", "_").replace("<", "_")
         hasher = hashlib.md5()
         hasher.update(current_url.encode("utf-8"))
 
